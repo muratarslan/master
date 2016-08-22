@@ -1,0 +1,60 @@
+
+1) Get image from nao
+	a) ALPhotoCapture
+
+2) Do perspeftive correction 
+	a) Read Image
+	b) Kernel Configuration
+	c) Convert BGR to HSV
+	d) Define Green Color lower and upper boundaries
+	e) Do Thresholding
+	f) Find Closing Area
+	h) Do blur
+	i) Get Contours
+	j) Get 4 point coordinates
+	k) Draw Lines and dots
+	l) Do perspective calculations
+	m) Warp correct image & resize
+	n) Save Image 
+
+3) Preprocess for area
+	a) Read Image 
+	b) Canny Edge Detection
+	c) Corner Harris Detection
+	d) Draw Contours 
+	e) Draw Rectangle around contours 
+	f) Save Image
+
+4) Create Dataset
+	a) Crop Images
+	b) Create Negative, Positive folders 
+	c) Seperate Images
+	d) Rename all images
+
+5) Train svm 
+	a) Get Images
+	b) Get Histograms
+	c) Define Values 0 and 1 for svm
+	d) Split matrix in desired format
+	e) Train SVM
+	d) Get Results
+
+6) Apply path finding
+	a) Get the binary matrix from svm
+	b) Do A* Pathfinding
+	c) Draw the path
+
+7) Find the correction value between virtual path and real path
+
+8) Move nao to beginning of the path
+	a) Find Orange marker or ball
+	b) Make Nao to go marker
+
+9) Follow the path
+	a) Find way point on the path
+	b) Calculate real coordinates
+	c) moveTo()
+
+10) Finish
+
+

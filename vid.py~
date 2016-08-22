@@ -1,0 +1,7 @@
+import sys
+
+from PyQt4.QtGui import QWidget, QImage, QApplication, QPainter
+from naoqi import ALProxy
+
+# To get the constants relative to the video.
+import vision_definitions
