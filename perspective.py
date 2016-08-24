@@ -14,12 +14,12 @@ hsv = cv2.cvtColor(im, cv2.COLOR_BGR2HSV)
 
 
 # define range of white color in HSV
-lower_green = np.array([110,100,100])
-upper_green = np.array([130,255,255])
+lower_blue = np.array([0,0,168])
+upper_blue = np.array([179,255,255])
 
 
 # Threshold the HSV image to get only green colors
-mask = cv2.inRange(hsv, lower_green, upper_green)
+mask = cv2.inRange(hsv, lower_blue, upper_blue)
 
 
 # Closing 
@@ -42,7 +42,12 @@ topmost = tuple(cnt[cnt[:,:,1].argmin()][0])
 bottommost = tuple(cnt[cnt[:,:,1].argmax()][0])
 rightmost = tuple(cnt[cnt[:,:,0].argmax()][0])
 
-'''
+print leftmost
+print topmost
+print bottommost
+print rightmost
+
+
 # Drawing lines and circles
 hull = cv2.convexHull(cnt,returnPoints = False)
 defects = cv2.convexityDefects(cnt,hull)
@@ -54,11 +59,11 @@ for i in range(defects.shape[0]):
     far = tuple(cnt[f][0])
     cv2.line(im,start,end,[0,255,0],2)
     cv2.circle(im,far,5,[0,0,255],-1)
-'''
+
 
 # Corner coordinates
 #coordinates = [(topmost[0],topmost[1]), (bottommost[0], topmost[1]),(rightmost[0], rightmost[1]), (leftmost[0],leftmost[1])]
-coordinates = [(163,238),(498,241),(633,303),(43,294)]
+coordinates = [(155,348),(471,352),(569,402),(58,394)]
 
 
 # Put coordinates in array
@@ -106,6 +111,6 @@ cv2.imshow("HSV", hsv)
 cv2.imshow("Original", img)
 cv2.imshow("Trapezoid found", im)
 cv2.imshow("Warped", resize)
-cv2.imwrite("areas/edge.jpg",resize)
+#cv2.imwrite("areas/edge.jpg",resize)
 cv2.waitKey(0)
 cv2.destroyAllWindows()

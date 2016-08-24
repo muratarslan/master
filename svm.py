@@ -177,7 +177,7 @@ def path():
 
 	    cv2.imwrite('areas/area-path.png',img)
 
-# SHOW PICTURES
+            # SHOW PICTURES
 	    org = cv2.imread('areas/edge.jpg',0)
 	    path = cv2.imread('areas/area-path.png',0)
 	    plt.subplot(221),plt.imshow(org,cmap = 'gray')

@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 
 
+cap = cv2.imread("image.png")
 
 def nothing(x):
     pass
@@ -18,7 +19,7 @@ cv2.createTrackbar('v', 'result',0,255,nothing)
 
 while(1):
 
-    frame = cv2.imread('image2.png')
+    frame = cv2.imread("image.png")
 
     #converting to HSV
     hsv = cv2.cvtColor(frame,cv2.COLOR_BGR2HSV)
